@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loginData = {};
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+  }
+
+  save() {
+    this.authService.loginUser(this.loginData).subscribe(res => localStorage.setItem('token', res.token));
   }
 
 }
