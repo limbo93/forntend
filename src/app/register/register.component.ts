@@ -16,7 +16,8 @@ export class RegisterComponent implements OnInit {
   }
 
   save() {
-    this.authService.registerUser(this.registerData).subscribe(() => console.log('registered'));
+    this.authService.registerUser(this.registerData).subscribe();
+    this.registerData = {};
   }
 
 }

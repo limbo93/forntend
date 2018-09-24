@@ -9,17 +9,19 @@ import {
   MatButtonModule,
   MatCardModule,
   MatToolbarModule,
-  MatInputModule
+  MatInputModule,
+  MatListModule
 } from '@angular/material';
 import { RegisterComponent } from './register/register.component';
 import { appRoutes } from './app.routes';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './auth.service';
-import { MatButtonModule, MatCardModule } from '@angular/material';
+import { UsersComponent } from './users/users.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent, UsersComponent, ProfileComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -30,6 +32,7 @@ import { MatButtonModule, MatCardModule } from '@angular/material';
     MatCardModule,
     MatToolbarModule,
     MatInputModule,
+    MatListModule
   ],
   providers: [AppService, AuthService],
   bootstrap: [AppComponent]

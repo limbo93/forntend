@@ -12,4 +12,12 @@ export class AppService {
     fetchData(): Observable<any> {
         return this.http.get('http://localhost:3000/rnd');
     }
+
+    fetchUsers(): Observable<any> {
+        return this.http.get('http://localhost:3000/users');
+    }
+
+    fetchProfile(profileId): Observable<any> {
+        return this.http.get('http://localhost:3000/profile/' + profileId);
+    }
 }
