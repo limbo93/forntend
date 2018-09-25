@@ -8,7 +8,7 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  registerData = {};
+  registerData = { name: '', email: '', description: '', pwd: '' };
 
   constructor(private authService: AuthService) { }
 
@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
   save() {
     this.authService.registerUser(this.registerData).subscribe(res => localStorage.setItem('token', res.token));
-    this.registerData = {};
+    this.registerData = { name: '', email: '', description: '', pwd: '' };
   }
 
 }

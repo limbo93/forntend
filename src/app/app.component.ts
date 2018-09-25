@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   messages = [];
 
   constructor(private appService: AppService,
-    private authService: AuthService) { }
+    public authService: AuthService) { }
 
   ngOnInit(): void { }
 
