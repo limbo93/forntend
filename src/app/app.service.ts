@@ -26,4 +26,8 @@ export class AppService {
     createMessage(message): Observable<any> {
         return this.http.post(this.path + "/messages", message);
     }
+
+    fetchMessages(userId): Observable<any> {
+        return this.http.get(this.path + '/messages/' + userId);
+    }
 }

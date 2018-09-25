@@ -20,6 +20,7 @@ import {
   MatListModule
 } from "@angular/material";
 import { MessageComponent } from './message/message.component';
+import { ViewMessageComponent } from './view-message/view-message.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MessageComponent } from './message/message.component';
     LoginComponent,
     UsersComponent,
     ProfileComponent,
-    MessageComponent
+    MessageComponent,
+    ViewMessageComponent
   ],
   imports: [
     BrowserModule,
