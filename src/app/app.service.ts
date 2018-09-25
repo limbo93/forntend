@@ -30,4 +30,5 @@ export class AppService {
     fetchMessages(userId): Observable<any> {
         return this.http.get(this.path + '/messages/' + userId);
     }
+
 }
