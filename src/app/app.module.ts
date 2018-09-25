@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { AppService } from "./app.service";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RegisterComponent } from "./register/register.component";
 import { appRoutes } from "./app.routes";
@@ -21,6 +21,7 @@ import {
 } from "@angular/material";
 import { MessageComponent } from './message/message.component';
 import { ViewMessageComponent } from './view-message/view-message.component';
+import { AuthInterceptorService } from "./auth.interceptor.service";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,15 @@ import { ViewMessageComponent } from './view-message/view-message.component';
     MatInputModule,
     MatListModule
   ],
-  providers: [AppService, AuthService],
+  providers: [
+    AppService,
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
