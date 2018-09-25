@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>Message:</mat-card-title>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Message" [(ngModel)]="message" name="message" type="text">
+    </mat-form-field>
+  </form>
+
+  <button mat-raised-button color="primary" (click)="save()">Send</button>
+</mat-card>
